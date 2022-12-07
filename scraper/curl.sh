@@ -5,6 +5,5 @@ len=${#years_keys[@]}
 for (( i=1; i<=$len; i++ ))
 do 
    curl_year_param=$((i-1))
-   #echo "${years_keys[$curl_year_param]}"
-   curl -X POST "http://www.les24heures.fr/database-24h/FR/PAGE_24h_mans_annee_lm.php" --data "WD_JSON_PROPRIETE_=%7B%22m_oProprietesSecurisees%22%3A%7B%22A17%22%3A+%7B%2212%22%3A1%7D%22A21%22%3A+%7B%2212%22%3A1%2C%7D%22A22%22%3A+%7B%2212%22%3A1%2C%7D%22A23%22%3A+%7B%2212%22%3A1%2C%7D%22A24%22%3A+%7B%2212%22%3A1%2C%7D%7D%7D&WD_BUTTON_CLICK_=A4&WD_ACTION_=&A4=$curl_year_param&A5=3&A6=1&A15=1&A15_DEB=1&_A15_OCC=34" > ./../datas/data_row/${years_keys[$curl_year_param]}.txt
+   curl -X POST "http://www.les24heures.fr/database-24h/FR/PAGE_24h_mans_annee_lm.php" --data "WD_JSON_PROPRIETE_=%7B%22m_oProprietesSecurisees%22%3A%7B%22A17%22%3A+%7B%2212%22%3A1%7D%22A21%22%3A+%7B%2212%22%3A1%2C%7D%22A22%22%3A+%7B%2212%22%3A1%2C%7D%22A23%22%3A+%7B%2212%22%3A1%2C%7D%22A24%22%3A+%7B%2212%22%3A1%2C%7D%7D%7D&WD_BUTTON_CLICK_=A4&WD_ACTION_=&A4=$i&A5=3&A6=1&A15=1&A15_DEB=1&_A15_OCC=34" > ./../datas/data_row/${years_keys[$curl_year_param]}.txt
 done
